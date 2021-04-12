@@ -3,7 +3,7 @@
 * _ANSI symbol will be defined (such as 31459). Otherwise, _ANSI will not be defined
 * here, but can be defined by applications that want to comply with the rules.
 * The magic number in the definition serves to inhibit unnecessary submission
-* the rules. (For consistency with the new tests of ’#ifdef _ANSI" in
+* the rules. (For consistency with the new tests of ’#ifdef _ANSI in
 * headers, _ANSI should be set to nothing, but this
 * would damage many library routines that use "#if _ANSI".)
 
