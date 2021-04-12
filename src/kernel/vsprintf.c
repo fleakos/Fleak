@@ -1,8 +1,4 @@
 /* vsprintf.c -- Lars Wirzenius & Linus Torvalds. */
-/*
- * Wirzenius wrote this portably, Torvalds fucked it up :-)
- */
-/*Thanks Lars Wirzwnius & Linus Torvalds. */
 
 #include <stdarg.h>
 #include <string.h>
