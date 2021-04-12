@@ -1,5 +1,5 @@
 / * The <ansi.h> header tries to decide whether the compiler is sufficiently
-* compatible with Standard C for Minix to take advantage of it, was adapted to FlackOS by Ch4r0nN. If so, the
+* compatible with Standard C for Minix to take advantage of it, was adapted to FleakOS by Ch4r0nN. If so, the
 * _ANSI symbol will be defined (such as 31459). Otherwise, _ANSI will not be defined
 * here, but can be defined by applications that want to comply with the rules.
 * The magic number in the definition serves to inhibit unnecessary submission
