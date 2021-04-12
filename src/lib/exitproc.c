@@ -2,6 +2,8 @@
 of this code document, but changing it is not allowed. */
 
 #define __LIBRARY__
+#define __NR_exit 93
+
 #include <unistd.h>
 
 volatile void _exit(int exit_code)
