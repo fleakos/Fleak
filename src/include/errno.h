@@ -7,3 +7,5 @@
 #define ERRPROC 3 /* não existe tal processo*/
 #define EFUNCALL 4 /* chamada de função interrompida */
 #define ERRIO 5 /* Input/Output errors */
+
+#endif /* _ERRNO_H */
