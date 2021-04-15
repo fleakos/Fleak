@@ -1,5 +1,5 @@
 #include "errno.h"
-#innclude "errturn.h"
+#include "errturn.h"
 
 /* Print current error message, coded by andy tanebaum, edited by Ch4r0nN*/
 
