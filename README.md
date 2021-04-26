@@ -11,6 +11,8 @@ FleakOS Kernel Source Tree
 
 - sudo apt install -y qemu-system-x86
 
+> apt-get install grub-common
+
 # Executando 
 
 - chmod +x build.sh
