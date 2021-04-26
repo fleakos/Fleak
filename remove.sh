@@ -1,4 +1,4 @@
-echo "Removendo o lixo depois de utilizar"
+echo "Removing trash after use"
 rm fleakos.iso
 rm fleakos.bin
 rm isodir/boot/fleakos.bin
