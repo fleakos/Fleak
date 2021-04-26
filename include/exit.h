@@ -1,4 +1,4 @@
-/* exit.h (c) Ch4r0nN/Gr3n0xX */
+/* exit.h (c) 2021 Ch4r0nN/Gr3n0xX */
 #ifndef _EXIT_H_
 #define _EXIT_H_
 
