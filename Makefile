@@ -22,12 +22,12 @@ build:
 	$(MAKE) -C init/
 	$(MAKE) -C boot/
 
-	$(CC) -m32 -T boot/link.ld -o fleakos.bin -ffreestanding -O2 -nostdlib boot/boot.o kernel/kernel.o -lgcc -fno-pic
+	$(CC) -m32 -T boot/link.ld -o fleakos.bin -ffreestanding -O2 -nostdlib boot/boot.o init/kernel.o -lgcc -fno-pic
 
 	sudo cp fleakos.bin isodir/boot/fleakos.bin
 
 	grub-mkrescue -o fleakos.iso isodir
-	qemu-system-i386 -kernel fleakos.iso
+	qemu-system-i386 -cdrom fleakos.iso
 
 clean:
 	@echo "---------------------"
