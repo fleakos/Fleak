@@ -1,7 +1,7 @@
 # FleakOS
 FleakOS Kernel Source Tree
 
-# Dependencias
+# Dependencies
 
 > sudo apt-get install -y xorriso
 
@@ -11,17 +11,10 @@ FleakOS Kernel Source Tree
 
 > sudo apt install -y qemu-system-x86
 
-> apt-get install grub-common
+> sudo apt-get install grub-common
 
-# Executando 
+# Compiling
 
-> chmod +x build.sh
-
-> ./build.sh
-
-# Removendo lixo
-
-> chmod +x remove.sh
-
-> ./remove.sh
-
+ ```bash
+make 
+```
