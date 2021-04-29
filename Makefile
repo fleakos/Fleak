@@ -32,7 +32,7 @@ build:
 clean:
 	@echo "---------------------"
 	@echo "Cleaning..."
-	rm -r *.o
+	rm -r init/kernel.o boot/boot.o
 	rm -r *.iso
 	rm -r *.bin
 
