@@ -2,7 +2,7 @@
 
 MAKE = make
 LD = ld 
-CC = gcc 
+CC = clang 
 NASM = nasm
 
 CFLAGS =  -m32 \
