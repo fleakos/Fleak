@@ -11,6 +11,8 @@
 #define _TYPES_
 
 typedef unsigned size_t;
+sizeof(unsigned int *FILE);
+
 
 int printf(const char *fmt, ...);
 
