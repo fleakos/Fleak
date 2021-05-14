@@ -7,6 +7,11 @@
 #define stdout 1
 #define stderr 2
 
+#ifndef _TYPES_
+#define _TYPES_
+
+typedef unsigned size_t;
+
 int printf(const char *fmt, ...);
 
 int scanf(char *format, unsigned args);
@@ -15,4 +20,5 @@ int fgets(char *str, int num);
 
 char gett(void);
 
+#endif /* TYPES */
 #endif /* _STDIO_H_ */
