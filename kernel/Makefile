@@ -3,6 +3,8 @@ LD = ld
 CC = gcc 
 NASM = nasm
 
+ASFLAGS=-f elf32
+
 CFLAGS =  -m32 \
 	-ffreestanding \
 	-O2 \
@@ -10,8 +12,12 @@ CFLAGS =  -m32 \
 	-lgcc \
 	-fno-pic
 
-all: all-c
+all: all-assembly all-c  
 
 all-c: 
+	$(CC) -c gdt.c $(CFLAGS) -o gdt.o 
 	$(CC) -c kernel_panic.c $(CFLAGS) -o panic.o 
-	$(CC) -c pk.c $(CFLAGS) -o pk.o 
+
+all-assembly:
+
+	$(NASM) $(ASFLAGS) gdt_idt.asm -o gdt_idt.o
