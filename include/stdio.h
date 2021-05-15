@@ -7,6 +7,12 @@
 #define stdout 1
 #define stderr 2
 
+#ifndef _NULL
+#define _NULL
+
+#define NULL ((void *)0)
+#endif /* _NULL */
+
 #ifndef _TYPES_
 #define _TYPES_
 
