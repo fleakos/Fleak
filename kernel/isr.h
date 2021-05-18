@@ -14,4 +14,11 @@ typedef struct registers_struct
 // End of interrupt 
 extern void EOI() ;
 
+// Handlers 
+typedef void (*isr)(registers) ; 
+
+// Call this function to map an interrupt once installed 
+void map_handler_interrupt(unsigned int  Nr_interrupt ,isr handler ) ;
+
+
 #endif
