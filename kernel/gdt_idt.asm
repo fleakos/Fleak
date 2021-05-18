@@ -20,3 +20,11 @@ gdt_flush:
 	
 .flsh:
 	ret
+
+
+[GLOBAL idt_flush]
+idt_flush :
+	
+	mov eax , [esp+4] ; IDT poinnter 
+	lidt [eax] ; Load IDT pointer Into Special register IDTR
+	ret 

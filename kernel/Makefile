@@ -16,8 +16,12 @@ all: all-assembly all-c
 
 all-c: 
 	$(CC) -c gdt.c $(CFLAGS) -o gdt.o 
-	$(CC) -c kernel_panic.c $(CFLAGS) -o panic.o 
+	$(CC) -c kernel_panic.c $(CFLAGS) -o panic.o
+	$(CC) -c idt.c $(CFLAGS) -o idt.o
+	$(CC) -c interrupts_handlers.c $(CFLAGS) -o interrupts_handlers.o
+		
 
 all-assembly:
 
 	$(NASM) $(ASFLAGS) gdt_idt.asm -o gdt_idt.o
+	$(NASM) $(ASFLAGS) interrupts.asm -o interrupts.o 
