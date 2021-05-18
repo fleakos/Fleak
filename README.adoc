@@ -1,0 +1,11 @@
+== FleakOS - Kernel 
+
+The Kernel of FleakOS is inspired by OpenBSD 
+
+* Goals
+** be simple and easy to read
+** minimum of line as possible
+** run on bare metal
+** only for study
+
+image::imagesdir/image.png[]
