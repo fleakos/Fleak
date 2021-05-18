@@ -14,3 +14,9 @@ image::images/image.png[]
 ** [ ] - run on bare metal
 ** - less lines as possible
 
+* Dependencies :
+** xorriso
+** gcc-multilib
+** nasm
+** qemu-system-x86
+** grub-common
