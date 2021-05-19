@@ -31,8 +31,8 @@ image::images/image.png[]
 === How to contribuite to us :
 
 * Send us a message !  :)
-** Telegram Group :
-*** > 
+** Telegram Group : 
+*** > https://t.me/FleakernelDevelopment
 ** Email :
 *** > KisanHorini@protonmail.com
 
