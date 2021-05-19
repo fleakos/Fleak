@@ -26,3 +26,15 @@ image::images/image.png[]
 ** Remenber that this project is a "toyOS" 
 ** We are not building this for use in production
 ** Maybe this OS only do very basic stuff 
+
+
+=== How to contribuite to us :
+
+* Send us a message !  :)
+** Telegram Group :
+*** > 
+** Email :
+*** > KisanHorini@protonmail.com
+
+**  You're welcome :D
+
