@@ -18,7 +18,8 @@ typedef unsigned int size_t;
 
 typedef unsigned int u_int;
 typedef unsigned short u_short;
-typedef unsigned u_char;
+typedef unsigned char u_char;
+typedef unsigned long u_long;
 #endif /* _TYPES */
 
 #endif /* _TYPES_H_ */
