@@ -19,5 +19,4 @@ int fgets(char *str, int num);
 
 char gett(void);
 
-#endif /* TYPES */
 #endif /* _STDIO_H_ */
