@@ -15,8 +15,8 @@ int main (int argc, char *argv[]){
         if (count > 0) write(1, buf, count); 
 exit(0);
 } 
-    collect(s)
-    char *s;{
+    int collect(s) char *s;
+    {
         char c; 
         if (count == SIZE) {write(1, buf, count);
         count = 0;
