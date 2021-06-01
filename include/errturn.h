@@ -2,7 +2,7 @@
 #define _ERRTURN_H
 
 extern int errno;
-char *error_message[NERROR+1] = {
+char *error_message[ERRURG+1] = {
         "Error 0",
         "Not owner",
         "No such file or directory",
