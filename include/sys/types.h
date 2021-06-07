@@ -16,10 +16,26 @@ typedef unsigned int size_t;
 #ifdef _TYPES
 #define _TYPES
 
-typedef unsigned int u_int;
-typedef unsigned short u_short;
-typedef unsigned char u_char;
-typedef unsigned long u_long;
+/*
+arch Align: char short int long ptr long-long u8 u16 u32 u64
+i386 1 2 4 4 4 4 1 2 4 4
+i686 1 2 4 4 4 4 1 2 4 4
+alpha 1 2 4 8 8 8 1 2 4 8
+armv4l 1 2 4 4 4 4 1 2 4 4
+ia64 1 2 4 8 8 8 1 2 4 8
+mips 1 2 4 4 4 8 1 2 4 8
+ppc 1 2 4 4 4 8 1 2 4 8
+sparc 1 2 4 4 4 8 1 2 4 8
+sparc64 1 2 4 4 4 8 1 2 4 8
+x86_64 1 2 4 8 8 8 1 2 4 8
+kernel: arch Align: char short int long ptr long-long u_char8 u_short16 u_int32 u_long64
+kernel: sparc64 1 2 4 8 8 8 1 2 4 8
+*/
+
+typedef unsigned int u_int32;
+typedef unsigned short u_short16;
+typedef unsigned long u_long64;
+typedef unsigned char u_char8;
 #endif /* _TYPES */
 
 #endif /* _TYPES_H_ */
