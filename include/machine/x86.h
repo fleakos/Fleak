@@ -2,9 +2,9 @@
 
 
 static inline u_char
-inb(u_short port)
+inb(u_short32 port)
 {
-  u_char data;
+  u_char8 data;
 
   asm volatile("in %1,%0" : "=a" (data) : "d" (port));
   return data;
@@ -20,13 +20,13 @@ insl(int port, void *addr, int cnt)
 }
 
 static inline void
-outb(u_short port, u_char data)
+outb(u_short32 port, u_char8 data)
 {
   asm volatile("out %0,%1" : : "a" (data), "d" (port));
 }
 
 static inline void
-outw(u_short port, u_short data)
+outw(u_short32 port, u_short32 data)
 {
   asm volatile("out %0,%1" : : "a" (data), "d" (port));
 }
@@ -63,11 +63,11 @@ struct segdesc;
 static inline void
 lgdt(struct segdesc *p, int size)
 {
-  volatile ushort pd[3];
+  volatile u_short32 pd[3];
 
   pd[0] = size-1;
-  pd[1] = (uint)p;
-  pd[2] = (uint)p >> 16;
+  pd[1] = (u_int64)p;
+  pd[2] = (u_int64)p >> 16;
 
   asm volatile("lgdt (%0)" : : "r" (pd));
 }
@@ -77,31 +77,31 @@ struct gatedesc;
 static inline void
 lidt(struct gatedesc *p, int size)
 {
-  volatile ushort pd[3];
+  volatile u_short32 pd[3];
 
   pd[0] = size-1;
-  pd[1] = (uint)p;
-  pd[2] = (uint)p >> 16;
+  pd[1] = (u_int64)p;
+  pd[2] = (u_int64)p >> 16;
 
   asm volatile("lidt (%0)" : : "r" (pd));
 }
 
 static inline void
-ltr(ushort sel)
+ltr(u_short32 sel)
 {
   asm volatile("ltr %0" : : "r" (sel));
 }
 
-static inline uint
+static inline u_int64
 readeflags(void)
 {
-  uint eflags;
+  u_int64 eflags;
   asm volatile("pushfl; popl %0" : "=r" (eflags));
   return eflags;
 }
 
 static inline void
-loadgs(u_short v)
+loadgs(u_short32 v)
 {
   asm volatile("movw %0, %%gs" : : "r" (v));
 }
@@ -118,10 +118,10 @@ sti(void)
   asm volatile("sti");
 }
 
-static inline u_int
-xchg(volatile u_int *addr, u_int newval)
+static inline u_int64
+xchg(volatile u_int64 *addr, u_int64 newval)
 {
-  uint result;
+  u_int64 result;
   
   // The + in "+m" denotes a read-modify-write operand.
   asm volatile("lock; xchgl %0, %1" :
@@ -131,49 +131,49 @@ xchg(volatile u_int *addr, u_int newval)
   return result;
 }
 
-static inline u_int
+static inline u_int64
 rcr2(void)
 {
-  u_int val;
+  u_int64 val;
   asm volatile("movl %%cr2,%0" : "=r" (val));
   return val;
 }
 
 static inline void
-lcr3(u_int val) 
+lcr3(u_int64 val) 
 {
   asm volatile("movl %0,%%cr3" : : "r" (val));
 }struct trapframe {
   // registers as pushed by pusha
-  u_int edi;
-  u_int esi;
-  u_int ebp;
-  u_int oesp;      // useless & ignored
-  u_int ebx;
-  u_int edx;
-  u_int ecx;
-  u_int eax;
+  u_int64 edi;
+  u_int64 esi;
+  u_int64 ebp;
+  u_int64 oesp;      // useless & ignored
+  u_int64 ebx;
+  u_int64 edx;
+  u_int64 ecx;
+  u_int64 eax;
 
   // rest of trap frame
-  u_short gs;
-  u_short padding1;
-  u_short fs;
-  u_short padding2;
-  u_short es;
-  u_short padding3;
-  u_short ds;
-  u_short padding4;
-  u_int trapno;
+  u_short32 gs;
+  u_short32 padding1;
+  u_short32 fs;
+  u_short32 padding2;
+  u_short32 es;
+  u_short32 padding3;
+  u_short32 ds;
+  u_short32 padding4;
+  u_int64 trapno;
 
   // below here defined by x86 hardware
-  u_int err;
-  u_int eip;
-  u_short cs;
-  u_short padding5;
-  u_int eflags;
+  u_int64 err;
+  u_int64 eip;
+  u_short32 cs;
+  u_short32 padding5;
+  u_int64 eflags;
 
   // below here only when crossing rings, such as from user to kernel
-  u_int esp;
-  u_short ss;
-  u_short padding6;
+  u_int64 esp;
+  u_short32 ss;
+  u_short32 padding6;
 };
