@@ -38,4 +38,13 @@ typedef unsigned long u_long64;
 typedef unsigned char u_char8;
 #endif /* _TYPES */
 
+#ifndef _WCHAR_T_
+#define _WCHAR_T_
+
+/* Thus, the wchar_t data type is the same 
+*    as an unsigned short integer: 16 bits wide. 
+*/
+
+typedef unsigned short wchar_t;
+#endif /* _WCHAR_T_ */
 #endif /* _TYPES_H_ */
