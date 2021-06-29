@@ -11,6 +11,9 @@ image::images/image.png[]
 * Goals : 
 ** [*] - be simple and easy to read
 ** [x] - only for study
+** [x] - a simple bootloader
+** [x] - gdt and idt entry
+** [x] - irq's and irs
 ** [ ] - run on bare metal
 ** - less lines as possible
 
