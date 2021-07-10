@@ -47,4 +47,11 @@ typedef unsigned char u_char8;
 
 typedef unsigned short wchar_t;
 #endif /* _WCHAR_T_ */
+
+#ifndef _PARSER_
+#define _PARSER_
+
+extern int fork(void);
+#endif /* _PARSER_ */
+
 #endif /* _TYPES_H_ */
