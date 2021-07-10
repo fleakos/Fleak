@@ -1,4 +1,4 @@
-#include "console/echo.h"
+#include "../include/console/echo.h"
 
 int main (int argc, char *argv[]){ 
     register int i, nflag; 
