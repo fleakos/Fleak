@@ -1,26 +1,45 @@
-#ifndef GDT_H
-#define GDT_H
+#include "../../include/machine/gdt.h"
 
-struct gdt_entry_struct
+// This function will be defined in IDT_GDT.asm , it will load the GDT pointer
+extern void gdt_flush(int) ;
+
+ // initialize gdt with this function
+static void init_gdt();
+
+// Set Value for one GDT entry 
+static void gdt_set_entry(int,unsigned int,unsigned int,unsigned char,unsigned char);
+
+// (Code Segment & Data Segment ) for Kernel , (Code Segment and Data Segment) for User mode , NULL entry .  
+gdt_entry gdt_entries[5] ; 
+gdt_ptr GDT ;
+
+
+static void init_gdt()
 {
-   unsigned short limit_low;           // The lower 16 bits of the limit.
-   unsigned short base_low;            // The lower 16 bits of the base.
-   unsigned char base_middle;         // The next 8 bits of the base.
-   unsigned char access;              // Access flags, determine what ring this segment can be used in.
-   unsigned char granularity;
-   unsigned char base_high;           // The last 8 bits of the base.
-} __attribute__((packed));
 
-typedef struct gdt_entry_struct gdt_entry;
+   GDT.limit = sizeof(gdt_entry) * 5 - 1; // Gets calculated in compilation !
+   GDT.base  = (int)&gdt_entries;
 
-// Default struct to tell the processor where to find our GDT 
-struct gdt_ptr_struct
+   gdt_set_entry(0, 0, 0, 0, 0);                // Null segment
+   gdt_set_entry(1, 0, 0xFFFFFFFF, 0x9A, 0xCF); // Kernel Code segment
+   gdt_set_entry(2, 0, 0xFFFFFFFF, 0x92, 0xCF); // Kernel Data segment
+   gdt_set_entry(3, 0, 0xFFFFFFFF, 0xFA, 0xCF); // User mode code segment
+   gdt_set_entry(4, 0, 0xFFFFFFFF, 0xF2, 0xCF); // User mode data segment
+
+   gdt_flush((int)&GDT);
+}
+
+
+static void gdt_set_entry(int num, unsigned int base, unsigned int limit, unsigned char access, unsigned char gran)
 {
-   unsigned short limit;               // The upper 16 bits of all selector limits.
-   unsigned int base;                // The address of the first gdt_entry.
-} __attribute__((packed));
-typedef struct gdt_ptr_struct gdt_ptr;
-// END GDT 
+	// Shifting operations for setting all the bits in their place 
+   gdt_entries[num].base_low    = (base & 0xFFFF);
+   gdt_entries[num].base_middle = (base >> 16) & 0xFF;
+   gdt_entries[num].base_high   = (base >> 24) & 0xFF;
 
+   gdt_entries[num].limit_low   = (limit & 0xFFFF);
+   gdt_entries[num].granularity = (limit >> 16) & 0x0F;
 
-#endif
+   gdt_entries[num].granularity |= gran & 0xF0;
+   gdt_entries[num].access      = access;
+}
