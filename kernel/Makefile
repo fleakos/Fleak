@@ -15,7 +15,6 @@ CFLAGS =  -m32 \
 all: all-assembly all-c  
 
 all-c: 
-	$(CC) -c gdt.c $(CFLAGS) -o gdt.o 
 	$(CC) -c kernel_panic.c $(CFLAGS) -o panic.o
 	$(CC) -c idt.c $(CFLAGS) -o idt.o
 	$(CC) -c interrupts_handlers.c $(CFLAGS) -o interrupts_handlers.o
