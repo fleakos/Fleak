@@ -14,3 +14,4 @@ all: all-c
 
 all-c: 
 	$(CC) -c gdt.c $(CFLAGS) -o gdt.o 
+    $(CC) -c idt.c $(CFLAGS) -o idt.o 
