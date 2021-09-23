@@ -5,7 +5,6 @@
 	#                       Fleak foundation                     	     #
 	######################################################################
 	# If you are running on Linux, must change the syntax of some        #
-	# instructions as: 'for', 'mkdir', or the path to some programs      #
 	# like: 'mkisofs', 'gcc', 'nasm', etc...                             #
 	# Also must change the '\' to '/'               		     # 
 	# This script is not compatible in Windows.                          #
