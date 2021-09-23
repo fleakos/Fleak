@@ -1,10 +1,23 @@
-In this file you will have the name, and github of all developers and contributors to this kernel. 
+	######################################################################
+	#                       Makefile for Fleak OS ver: 0.0.4             #
+	#                       Copyright(c) 09/04/2021		             #
+	#                       Fleak foundation                     	     #
+	######################################################################
+	# the file will consist of name, github and email          #
+	# Like:                             #
+	# N: Bruno .G Ciccarino             		     # 
+	# G: Ch4r0nN       #
+  # E: ciccabr9@gmail.com                    #
+	######################################################################
+ 
 
 N = name
 G = github
+E = email
 
-N: Bruno 
+N: Bruno .G Ciccarino
 G: https://github.com/Ch4r0nN
+E: ciccabr9@gmail.com
 
 N: Lucas
 G: https://github.com/luc4sd3v
