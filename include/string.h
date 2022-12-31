@@ -57,7 +57,8 @@ __asm__("cld\n"
 	"3:"
 	:"=a" (__res):"D" (cs),"S" (ct));
 return __res;
-}
+} // Code by: @linus torvalds 1998
+
 
 static inline int strncmp(const char * cs,const char * ct,int count)
 {
