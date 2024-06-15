@@ -1,4 +1,4 @@
-#include "../../include/machine/gdt.h"
+#include "gdt.h"
 
 // This function will be defined in IDT_GDT.asm , it will load the GDT pointer
 extern void gdt_flush(int) ;
