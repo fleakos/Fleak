@@ -1,4 +1,4 @@
-#include "../../include/machine/idt.h"
+#include "idt.h"
 
 
 idt_entry idt_entries[256] ; 
