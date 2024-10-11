@@ -5,6 +5,8 @@
 
 The Kernel of FleakOS is inspired by OpenBSD 
 
+[![total lines](https://tokei.rs/b1/github/fleakos/Fleak)](https://github.com/fleakos/Fleak)
+
 image::images/image.png[]
 
 
